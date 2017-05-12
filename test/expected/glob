@@ -1,0 +1,4 @@
+const fragment = "#define TEST 1";
+const vertex = "#define TEST 2";
+
+console.log(fragment, vertex);
