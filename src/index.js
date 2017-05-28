@@ -3,10 +3,9 @@ import waterfall from "async-waterfall";
 import glob from "glob";
 
 /**
- * Registers the inlineImport grunt task.
+ * Registers the inlineImport Grunt task.
  *
- * @method registerInlineImportTask
- * @param {Object} grunt - The grunt instance.
+ * @param {Object} grunt - The Grunt instance.
  */
 
 export default function registerInlineImportTask(grunt) {
@@ -27,9 +26,7 @@ export default function registerInlineImportTask(grunt) {
 			/**
 			 * Creates a list of affected files using glob.
 			 *
-			 * @method fetchFiles
 			 * @private
-			 * @static
 			 * @param {Function} next - A callback function.
 			 */
 
@@ -52,9 +49,7 @@ export default function registerInlineImportTask(grunt) {
 			/**
 			 * Inlines file imports in the identified files.
 			 *
-			 * @method inlineFiles
 			 * @private
-			 * @static
 			 * @param {String[]} files - A list of file paths.
 			 * @param {Function} next - A callback function.
 			 */
