@@ -1,6 +1,6 @@
 {
 	"name": "grunt-inline-import",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A Grunt plugin for inlining file imports.",
 	"homepage": "https://github.com/vanruesc/grunt-inline-import",
 	"main": "tasks/grunt-inline-import.js",

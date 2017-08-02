@@ -1,5 +1,5 @@
 /**
- * grunt-inline-import v0.0.3 build May 28 2017
+ * grunt-inline-import v0.0.4 build Aug 02 2017
  * https://github.com/vanruesc/grunt-inline-import
  * Copyright 2017 Raoul van Rüschen, Zlib
  */
@@ -69,7 +69,7 @@ var Settings = function Settings(file) {
 		this.declaration = options.useVar !== undefined && options.useVar ? "var" : "const";
 };
 
-var importRegExp = /import\s*(\w*)\s*from\s*[\"\'](.*)[\"\']/ig;
+var importRegExp = /import\s*(\w*)\s*from\s*["'](.*)["']/ig;
 
 var settings = null;
 
