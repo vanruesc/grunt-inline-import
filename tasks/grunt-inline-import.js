@@ -1,5 +1,5 @@
 /**
- * grunt-inline-import v0.0.4 build Aug 02 2017
+ * grunt-inline-import v0.0.5 build Aug 19 2017
  * https://github.com/vanruesc/grunt-inline-import
  * Copyright 2017 Raoul van Rüschen, Zlib
  */
