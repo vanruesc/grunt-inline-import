@@ -23,7 +23,6 @@ module.exports = function(grunt) {
 		task: {
 			options: {
 				format: "cjs",
-				moduleName: "<%= package.name.replace(/-/g, \"\").toUpperCase() %>",
 				banner: "<%= banner %>"
 			},
 			src: "src/index.js",
