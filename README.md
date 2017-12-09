@@ -34,20 +34,20 @@ To inline your file imports, you need to specify the path to the JavaScript
 file that should be modified. Additionally, you need to define the 
 ```extensions``` of the relevant import statements.
 
-##### text.txt
+#### text.txt
 
 ```
 hello world
 ```
 
-##### index.js
+#### index.js
 
 ```javascript
-import stuff from "garage";
+import component from "module";
 import text from "./text.txt";
 ```
 
-##### Gruntfile.js
+#### Gruntfile.js
 
 ```javascript
 inlineImport: {
@@ -62,17 +62,17 @@ inlineImport: {
 }
 ```
 
-##### index.js (inlined)
+#### index.js (inlined)
 
 ```javascript
-import stuff from "garage";
+import component from "module";
 const text = "hello world";
 ```
 
 
 ## Glob
 
-You may use [glob patterns](https://github.com/isaacs/node-glob#glob-primer) to inline a bunch of files at once. 
+You may use [glob patterns](https://github.com/isaacs/node-glob#glob-primer) to inline several files at once. 
 
 ```js
 inlineImport: {
@@ -91,8 +91,7 @@ inlineImport: {
 
 ## Options
 
-You may provide special ```glob``` options for the [glob](https://github.com/isaacs/node-glob#options) mechanism. 
-For more information, check out the options of the [inline-import](https://github.com/vanruesc/inline-import#options) tool. 
+Check the options of the [inline-import](https://github.com/vanruesc/inline-import#options) tool for details. 
 
 ```js
 inlineImport: {
@@ -103,8 +102,7 @@ inlineImport: {
 			".png": "base64"
 		},
 		encoding: "utf8",
-		useVar: true,
-		glob: { ... },
+		useVar: true
 	},
 	task: {
 		options: {
