@@ -7,8 +7,6 @@ module.exports = function(grunt) {
 
 		options: {
 			external: [
-				"async-waterfall",
-				"glob",
 				"path",
 				"fs"
 			],
