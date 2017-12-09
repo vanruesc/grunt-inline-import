@@ -1,6 +1,4 @@
 import InlineImport from "inline-import";
-import waterfall from "async-waterfall";
-import glob from "glob";
 
 /**
  * Registers the inlineImport Grunt task.
@@ -12,70 +10,42 @@ export default function registerInlineImportTask(grunt) {
 
 	grunt.registerMultiTask("inlineImport", "Inline file imports.", function() {
 
-		const options = this.options({
-			extensions: {},
-			encoding: "utf8",
-			useVar: false,
-			glob: null
-		});
+		const done = this.async();
 
-		const src = this.data.src;
+		const options = this.options();
+		const files = this.files;
 
-		waterfall([
+		const promise = new Promise((resolve, reject) => {
 
-			/**
-			 * Creates a list of affected files using glob.
-			 *
-			 * @private
-			 * @param {Function} next - A callback function.
-			 */
+			let i = 0, j = 0;
 
-			function fetchFiles(next) {
+			(function proceed() {
 
-				glob(src, options.glob, function(error, files) {
+				if(i === files.length) {
 
-					if(!error && files.length === 0) {
+					resolve();
 
-						error = new Error("No source files found for \"" + src + "\"");
+				} else {
 
-					}
+					if(j === files[i].src.length) {
 
-					next(error, files);
-
-				});
-
-			},
-
-			/**
-			 * Inlines file imports in the identified files.
-			 *
-			 * @private
-			 * @param {String[]} files - A list of file paths.
-			 * @param {Function} next - A callback function.
-			 */
-
-			function inlineFiles(files, next) {
-
-				let i = 0;
-				let l = files.length;
-
-				(function proceed(error) {
-
-					if(error || i === l) {
-
-						next(error);
+						++i;
+						j = 0;
+						proceed();
 
 					} else {
 
-						InlineImport.transform(files[i++], options, proceed);
+						InlineImport.transform(files[i].src[j++], options).then(proceed).catch(reject);
 
 					}
 
-				}());
+				}
 
-			}
+			}());
 
-		], this.async());
+		});
+
+		promise.then(done).catch(done);
 
 	});
 

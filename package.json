@@ -49,7 +49,7 @@
 	},
 
 	"dependencies": {
-		"inline-import": "0.x.x"
+		"inline-import": "1.x.x"
 	},
 
 	"devDependencies": {
