@@ -8,7 +8,7 @@
 	"license": "Zlib",
 
 	"keywords": [
-		"grunt", "plugin",
+		"gruntplugin",
 		"file", "import", "inline",
 		"glsl", "frag", "vert", "shader",
 		"html", "css", "xml", "txt",
