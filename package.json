@@ -5,6 +5,7 @@
 	"homepage": "https://github.com/vanruesc/grunt-inline-import",
 	"main": "tasks/grunt-inline-import.js",
 	"module": "src/index.js",
+	"sideEffects": false,
 	"license": "Zlib",
 
 	"keywords": [
